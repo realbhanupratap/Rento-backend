@@ -1,0 +1,17 @@
+{
+  "name": "rento-backend",
+  "version": "1.0.0",
+  "description": "Backend structure for Rento app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Rento",
+    "Backend",
+    "Javascript",
+    "Chai"
+  ],
+  "author": "Bhanu Pratap",
+  "license": "ISC"
+}
