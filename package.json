@@ -2,6 +2,7 @@
   "name": "rento-backend",
   "version": "1.0.0",
   "description": "Backend structure for Rento app",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,5 +14,9 @@
     "Chai"
   ],
   "author": "Bhanu Pratap",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.4",
+    "prettier": "^3.3.3"
+  }
 }
