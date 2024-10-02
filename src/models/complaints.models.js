@@ -14,11 +14,22 @@ const complaintSchema = new Schema({
   message: {
     type: String,
     required: true,
+    trim: true,
+    minlength: 10,
   },
   status: {
     type: String,
-    enum: ['Submitted', 'In Progress', 'Resolved'],
+    enum: ['Submitted', 'In Progress', 'Resolved', 'Rejected'],
     default: 'Submitted',
+  },
+  priority: {
+    type: String,
+    enum: ['Low', 'Medium', 'High'],
+    default: 'Low',
+  },
+  rejectionReason: {
+    type: String,
+    trim: true,
   },
 }, {
   timestamps: true,

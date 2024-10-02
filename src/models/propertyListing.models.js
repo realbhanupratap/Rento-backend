@@ -14,11 +14,18 @@ const propertyListingSchema = new Schema({
     type: String,
     required: true,
   },
+  coordinates: {
+    type: { type: String, default: 'Point' },
+    coordinates: {
+      type: [Number], // [longitude, latitude]
+      required: true,
+    },
+  },
   amenities: {
-    type: [String],  // Example: ['Wi-Fi', 'AC', 'Parking']
+    type: [String],
   },
   photos: {
-    type: [String],  // Array of image URLs
+    type: [String],
   },
   description: {
     type: String,
@@ -31,10 +38,13 @@ const propertyListingSchema = new Schema({
   ],
   available: {
     type: Boolean,
-    default: true,  // Marks if the property is still available
+    default: true,
   },
 }, {
   timestamps: true,
 });
+
+// Add geospatial index to the coordinates field
+propertyListingSchema.index({ coordinates: '2dsphere' });
 
 export const PropertyListing = mongoose.model('PropertyListing', propertyListingSchema);
